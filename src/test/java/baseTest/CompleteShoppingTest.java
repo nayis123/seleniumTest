@@ -2,20 +2,23 @@ package baseTest;
 
 import org.junit.Test;
 
-public class SeventhBagToCard extends BaseTest {
+public class CompleteShoppingTest extends BaseTest{
 
     @Test
-    public void seventhBagToCardTest() throws InterruptedException {
+    public void completeShoppingTest() throws Exception{
         //pre-conditions
         navigationBar.navigateToLoginPage();
         loginPage.logIn("alitilki111@hotmail.com", "0032549800a");
-        //pre-conditions
-
         navigationBar.navigateToMainPage();
         searchProduct.searchProduct("Çanta");
         navigationBar.navigateAddToCard();
+        //pre-conditions
+
+        navigationBar.navigateToCard();
+        navigationBar.increaseItemCount();
+        navigationBar.completeShopping();
+        navigationBar.editCard();
 
     }
-
 }
 

@@ -59,3 +59,4 @@ public class NavigationBar extends BasePage{
     }
 
 }
+

@@ -10,3 +10,4 @@ public class LoginTest extends BaseTest{
         loginPage.logIn("alitilki111@hotmail.com", "0032549800a");
     }
 }
+

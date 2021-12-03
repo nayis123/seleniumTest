@@ -16,3 +16,4 @@ public class RandomFourProductTest extends BaseTest{
         basePage.randomFourFavourite();
     }
 }
+
