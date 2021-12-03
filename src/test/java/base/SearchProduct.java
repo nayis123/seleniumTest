@@ -13,16 +13,8 @@ public class SearchProduct extends BasePage{
         super(driver, wait);
     }
 
-    public void searchProduct(String nameOfProduct) throws InterruptedException {
+    public void searchProduct(String nameOfProduct) {
         sendKey(searchProductId,nameOfProduct);
         click(findProductClick);
-        //Thread.sleep(1000);
-        //scroll();
-        //Thread.sleep(1000);
-        //randomFourFavourite();
-        //Thread.sleep(1000);
-        //driver.get("https://www.gittigidiyor.com/");
     }
-
-
 }

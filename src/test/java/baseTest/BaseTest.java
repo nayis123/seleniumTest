@@ -37,7 +37,8 @@ public class BaseTest {
         searchProduct = new SearchProduct(driver,wait);
     }
 
-
-    //_____________AFTER EKLENECEK
-
+    @After
+    public void tearDown(){
+        System.out.println("Tearing down");
+    }
 }

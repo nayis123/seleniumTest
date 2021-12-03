@@ -6,18 +6,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage{
 
-    By emailGirisi = By.id("L-UserNameField");
-    By passwordGirisi = By.id("L-PasswordField");
+    By enterEmail       = By.id("L-UserNameField");
+    By enterPassword    = By.id("L-PasswordField");
     By loginButtonClick = By.id("gg-login-enter");
 
-    public LoginPage(WebDriver driver, WebDriverWait wait){
+    public LoginPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
-    public void girisYap(String email, String password){
-        sendKey(emailGirisi,email);
-        sendKey(passwordGirisi,password);
+    public void logIn(String email, String password) {
+        sendKey(enterEmail,email);
+        sendKey(enterPassword,password);
         click(loginButtonClick);
     }
-
 }

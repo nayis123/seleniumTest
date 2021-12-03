@@ -7,20 +7,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class NavigationBar extends BasePage{
 
-    By hoverLoginPage = By.cssSelector("[title='Giriş Yap'] .gekhq4-4");
-    By hoverAddToCard = new By.ByXPath("(//*[@class='qjixn8-0 sc-1bydi5r-0 dGNqQc pXiHf sc-1n49x8z-3 bhXnM']) ["+7+"]");
-    By hoverToAccount = By.cssSelector("[title='Hesabım'] .gekhq4-4");
+    By hoverLoginPage           = By.cssSelector("[title='Giriş Yap'] .gekhq4-4");
+    By hoverAddToCard           = new By.ByXPath("(//*[@class='qjixn8-0 sc-1bydi5r-0 dGNqQc pXiHf sc-1n49x8z-3 bhXnM']) ["+7+"]");
 
-    By loginPageButton = By.cssSelector("[data-cy='header-login-button']");
-    By addToCardButton = new By.ByXPath("(//*[@class='qjixn8-0 sc-1bydi5r-0 dGNqQc pXiHf sc-1n49x8z-3 bhXnM']) ["+7+"]");
-    By toCardButton = By.cssSelector("[title='Sepetim'] .gekhq4-6");
-    By completeShoppingButton = new By.ByXPath("//input[@type='submit']");
-    By editCardButton = new By.ByXPath("//*[@title='Sepeti Düzenle']");
-    By mainPageAfterFavsButton = new By.ByXPath("//*[@alt='GittiGidiyor'] [1]");
-    By FavouritesButton = new By.ByXPath("//*[@title='Favorilerim']");
-    By mainPageAfterCardButton = new By.ByXPath("//*[@class='logo_gg imglink logo-small']");
+    By loginPageButton          = By.cssSelector("[data-cy='header-login-button']");
+    By addToCardButton          = new By.ByXPath("(//*[@class='qjixn8-0 sc-1bydi5r-0 dGNqQc pXiHf sc-1n49x8z-3 bhXnM']) ["+7+"]");
+    By toCardButton             = By.cssSelector("[title='Sepetim'] .gekhq4-6");
+    By completeShoppingButton   = new By.ByXPath("//input[@type='submit']");
+    By editCardButton           = new By.ByXPath("//*[@title='Sepeti Düzenle']");
+    By mainPageButton           = new By.ByXPath("//*[@alt='GittiGidiyor'] [1]");
 
-    By openDropDown = new By.ByXPath("//select[@class='amount']");
+    By openDropDown             = new By.ByXPath("//select[@class='amount']");
 
 
     public NavigationBar(WebDriver driver, WebDriverWait wait) {
@@ -33,7 +30,9 @@ public class NavigationBar extends BasePage{
         click(loginPageButton);
     }
 
-    public void navigateToMainPageAfterFavs(){ click(mainPageAfterFavsButton);    }
+    public void navigateToMainPage() {
+        click(mainPageButton);
+    }
 
     public void navigateAddToCard() throws InterruptedException {
         hover((hoverAddToCard));
@@ -46,7 +45,7 @@ public class NavigationBar extends BasePage{
         click(toCardButton);
     }
 
-    public void increaseItemCount() throws InterruptedException {
+    public void increaseItemCount() {
         Select increaseItem = new Select(driver.findElement(openDropDown));
         increaseItem.selectByVisibleText("2");
     }
@@ -55,19 +54,8 @@ public class NavigationBar extends BasePage{
         click(completeShoppingButton);
     }
 
-    public void editCard(){ click(editCardButton);}
-
-
-    public void navigateToMainPageAfterCard(){ click(mainPageAfterCardButton);}
-
-    public void navigateToFavourites() throws InterruptedException {
-        hover(hoverToAccount);
-        Thread.sleep(500);
-        click(FavouritesButton);
+    public void editCard() {
+        click(editCardButton);
     }
-
-
-
-
 
 }
